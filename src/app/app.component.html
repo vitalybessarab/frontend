@@ -342,11 +342,13 @@
   </div>
 
   <!-- Modules -->
-  <h2>Modules</h2>
-  <p>Here are some modules to help you get started:</p>
+  <h2>Modules count</h2>
+  <p>Here are modules count to help you get started:</p>
 
-  <div class="card-container">
-    <span class="card">module name</span>
+  <div  class="card-container">
+    <span class="card" *ngFor="let item of modulesCount$ | async | keyvalue">
+      {{ item.key }}: {{ item.value }}
+    </span>
   </div>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
