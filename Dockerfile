@@ -3,5 +3,5 @@ RUN apk update
 WORKDIR /app
 COPY dist/frontend/ /app
 COPY nginx.conf /etc/nginx/conf.d
-EXPOSE 8080
+EXPOSE 4300
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
