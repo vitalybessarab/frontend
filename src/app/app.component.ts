@@ -7,11 +7,15 @@ import { ApiService } from './api.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public modulesCount$: Observable<any>;
 
   constructor(private api: ApiService) {
     this.modulesCount$ = this.api.getModulesCount();
+  }
+
+  ngOnInit(): void {
+    console.log(`Backend URL: ${this.api.getBaseUrl()}`);
   }
 }

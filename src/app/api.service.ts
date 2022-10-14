@@ -10,6 +10,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getBaseUrl(): string {
+    return this.baseUrl;
+  }
+
   getModulesCount(): Observable<any> {
     return this.http.get(this.baseUrl.concat('/modules-count'));
   }
